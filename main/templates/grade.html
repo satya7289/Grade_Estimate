@@ -1,0 +1,47 @@
+{% extends "layout.html"%}
+
+{% block title %} main  {% endblock %}
+
+{% block main %}
+
+<div class="col-md-8 col-md-offset-2">
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading"><div class="col-md-offset-4"> Grade Estemate </div></div>
+  <div class="panel-body">
+
+
+
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                    <th> Subject</th>
+                                    <th> Cradit</th>
+                                    <th> Grade </th>
+
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {% for i in range(6) %}
+                                <tr>
+                                    <td>{{ sub[i] }}</td>
+                                    <td>{{ Cradit[i] }}</td>
+                                    <td>{{ Grade[i] }}</td>
+                                </tr>
+                                 {% endfor %}
+                               </tbody>
+                            </table>
+
+
+
+   <div class="well col-md-offset-8">
+       {{ cgpa }}
+   </div>
+
+  </div>
+</div>
+
+
+</div>
+{% endblock %}

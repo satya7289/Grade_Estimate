@@ -1,0 +1,61 @@
+{% extends "layout.html"%}
+
+{% block title %} main  {% endblock %}
+
+{% block main %}
+
+<div class="col-md-8 col-md-offset-2">
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading"><div class="col-md-offset-4"> Grade Estemate </div></div>
+  <div class="panel-body">
+
+        <form action=" {{ url_for('Grade') }}" method="post">
+              <div class="form-group">
+                            <table class="table">
+                              <thead>
+                                <tr>
+                                    <th> Subject</th>
+                                    <th> Cradit</th>
+                                    <th> Grade </th>
+
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                             {% for i in range(6) %}
+                                <tr>
+                                  <td class="col-md-4">
+                                      <input type="text" placeholder="subject">
+                                  </td>
+
+                                  <td>
+                                      <select name="{{ i }}">
+                                             {% for n in num %}
+                                             <option > {{ n }}</option>
+                                             {% endfor %}
+                                      </select>
+                                  </td>
+                                  <td>
+                                      <select name="{{ i+6 }}">
+                                              {% for a in alpha %}
+                                             <option> {{ a }}</option>
+                                             {% endfor %}
+                                         </select>
+                                  </td>
+                                </tr>
+                            {% endfor %}
+                               </tbody>
+                            </table>
+
+          <button type="submit" class="btn btn-default col-md-offset-8">Submit</button>
+              </div>
+        </form>
+
+  </div>
+</div>
+
+
+</div>
+{% endblock %}
