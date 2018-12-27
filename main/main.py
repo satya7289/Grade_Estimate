@@ -21,7 +21,7 @@ def index():
 def grades():
     i, t_cradit, s_cradit = 0, 0, 0
     grades, cradits, subject, ans = [], [], [], []
-    dictionary = {'A': 10, 'B': 8, 'C': 6, 'D': 4, 'F': 0}
+    dictionary = {'A': 10, 'B': 8, 'C': 6, 'D': 4, 'E':2, 'F': 0}
     result = request.form
     if result is None:
         return render_template("error.html",message='Complete the form')
